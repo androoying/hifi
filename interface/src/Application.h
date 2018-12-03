@@ -797,5 +797,8 @@ private:
 
     bool _showTrackedObjects { false };
     bool _prevShowTrackedObjects { false };
+
+    std::shared_ptr<ProceduralSkybox> _splashScreen { std::make_shared<ProceduralSkybox>() };
+    std::atomic<bool> _programsCompiled { false };
 };
 #endif // hifi_Application_h
