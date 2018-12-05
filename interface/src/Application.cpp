@@ -6543,7 +6543,7 @@ void Application::updateWindowTitle() const {
         }
     }
 
-    QString title = QString() + (!username.isEmpty() ? username + " @ marvelous" : QString())
+    QString title = QString() + (!username.isEmpty() ? username + " @ wondrous" : QString())
         + currentPlaceName + connectionStatus + loginStatus + buildVersion;
 
 #ifndef WIN32
