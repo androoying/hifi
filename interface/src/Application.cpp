@@ -2724,7 +2724,7 @@ Application::~Application() {
 }
 
 void Application::initializeGL() {
-    qCDebug(interfaceapp) << "Created Display Window.";
+    qCDebug(interfaceapp) << "Created Display Window and Andrew edited.";
 
 #ifdef DISABLE_QML
     setAttribute(Qt::AA_DontCheckOpenGLContextThreadAffinity);
