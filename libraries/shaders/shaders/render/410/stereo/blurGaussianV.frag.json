@@ -1,0 +1,94 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_47" : {
+            "name" : "BlurParameters",
+            "members" : [
+                {
+                    "name" : "resolutionInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "texcoordTransform",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "filterInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "depthInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "linearDepthInfo",
+                    "type" : "vec4",
+                    "offset" : 80
+                },
+                {
+                    "name" : "taps",
+                    "type" : "vec2",
+                    "array" : [
+                        33
+                    ],
+                    "offset" : 96
+                }
+            ]
+        },
+        "_48" : {
+            "name" : "blurParamsBuffer",
+            "members" : [
+                {
+                    "name" : "parameters",
+                    "type" : "_47",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outFragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "sourceMap",
+            "set" : 0,
+            "binding" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_48",
+            "name" : "blurParamsBuffer",
+            "block_size" : 624,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

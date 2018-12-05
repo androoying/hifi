@@ -1,0 +1,537 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_390" : {
+            "name" : "ShadowTransform",
+            "members" : [
+                {
+                    "name" : "reprojection",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "fixedBias",
+                    "type" : "float",
+                    "offset" : 64
+                },
+                {
+                    "name" : "slopeBias",
+                    "type" : "float",
+                    "offset" : 68
+                },
+                {
+                    "name" : "_padding1",
+                    "type" : "float",
+                    "offset" : 72
+                },
+                {
+                    "name" : "_padding2",
+                    "type" : "float",
+                    "offset" : 76
+                }
+            ]
+        },
+        "_392" : {
+            "name" : "ShadowParameters",
+            "members" : [
+                {
+                    "name" : "cascades",
+                    "type" : "_390",
+                    "array" : [
+                        4
+                    ],
+                    "offset" : 0
+                },
+                {
+                    "name" : "cascadeCount",
+                    "type" : "int",
+                    "offset" : 320
+                },
+                {
+                    "name" : "invMapSize",
+                    "type" : "float",
+                    "offset" : 324
+                },
+                {
+                    "name" : "invCascadeBlendWidth",
+                    "type" : "float",
+                    "offset" : 328
+                },
+                {
+                    "name" : "maxDistance",
+                    "type" : "float",
+                    "offset" : 332
+                },
+                {
+                    "name" : "invFalloffDistance",
+                    "type" : "float",
+                    "offset" : 336
+                }
+            ]
+        },
+        "_393" : {
+            "name" : "shadowTransformBuffer",
+            "members" : [
+                {
+                    "name" : "shadow",
+                    "type" : "_392",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1106" : {
+            "name" : "DeferredFrameTransform",
+            "members" : [
+                {
+                    "name" : "_pixelInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_invPixelInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_depthInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 64
+                },
+                {
+                    "name" : "_invProjection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionMono",
+                    "type" : "mat4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 384
+                },
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 448
+                },
+                {
+                    "name" : "_projectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 512
+                },
+                {
+                    "name" : "_invProjectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 640
+                }
+            ]
+        },
+        "_1107" : {
+            "name" : "deferredFrameTransformBuffer",
+            "members" : [
+                {
+                    "name" : "frameTransform",
+                    "type" : "_1106",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1112" : {
+            "name" : "CameraCorrection",
+            "members" : [
+                {
+                    "name" : "_correction",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_correctionInverse",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_prevView",
+                    "type" : "mat4",
+                    "offset" : 128
+                },
+                {
+                    "name" : "_prevViewInverse",
+                    "type" : "mat4",
+                    "offset" : 192
+                }
+            ]
+        },
+        "_1113" : {
+            "name" : "cameraCorrectionBuffer",
+            "members" : [
+                {
+                    "name" : "cameraCorrection",
+                    "type" : "_1112",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1389" : {
+            "name" : "LightingModel",
+            "members" : [
+                {
+                    "name" : "_UnlitEmissiveLightmapBackground",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_ScatteringDiffuseSpecularAlbedo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_AmbientDirectionalPointSpot",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_ShowContourObscuranceWireframe",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_HazeBloomSkinningBlendshape",
+                    "type" : "vec4",
+                    "offset" : 64
+                }
+            ]
+        },
+        "_1390" : {
+            "name" : "lightingModelBuffer",
+            "members" : [
+                {
+                    "name" : "lightingModel",
+                    "type" : "_1389",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1421" : {
+            "name" : "LightVolume",
+            "members" : [
+                {
+                    "name" : "positionRadius",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "directionSpotCos",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_1422" : {
+            "name" : "LightIrradiance",
+            "members" : [
+                {
+                    "name" : "colorIntensity",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "attenuation",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_1423" : {
+            "name" : "Light",
+            "members" : [
+                {
+                    "name" : "volume",
+                    "type" : "_1421",
+                    "offset" : 0
+                },
+                {
+                    "name" : "irradiance",
+                    "type" : "_1422",
+                    "offset" : 32
+                }
+            ]
+        },
+        "_1424" : {
+            "name" : "keyLightBuffer",
+            "members" : [
+                {
+                    "name" : "light",
+                    "type" : "_1423",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1446" : {
+            "name" : "SphericalHarmonics",
+            "members" : [
+                {
+                    "name" : "L00",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "L1m1",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "L10",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "L11",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "L2m2",
+                    "type" : "vec4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "L2m1",
+                    "type" : "vec4",
+                    "offset" : 80
+                },
+                {
+                    "name" : "L20",
+                    "type" : "vec4",
+                    "offset" : 96
+                },
+                {
+                    "name" : "L21",
+                    "type" : "vec4",
+                    "offset" : 112
+                },
+                {
+                    "name" : "L22",
+                    "type" : "vec4",
+                    "offset" : 128
+                }
+            ]
+        },
+        "_1447" : {
+            "name" : "LightAmbient",
+            "members" : [
+                {
+                    "name" : "_ambient",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_ambientSphere",
+                    "type" : "_1446",
+                    "offset" : 16
+                },
+                {
+                    "name" : "transform",
+                    "type" : "mat4",
+                    "offset" : 160
+                }
+            ]
+        },
+        "_1448" : {
+            "name" : "lightAmbientBuffer",
+            "members" : [
+                {
+                    "name" : "lightAmbient",
+                    "type" : "_1447",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_1792" : {
+            "name" : "ScatteringParameters",
+            "members" : [
+                {
+                    "name" : "normalBendInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "curvatureInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "debugFlags",
+                    "type" : "vec4",
+                    "offset" : 32
+                }
+            ]
+        },
+        "_1793" : {
+            "name" : "subsurfaceScatteringParametersBuffer",
+            "members" : [
+                {
+                    "name" : "parameters",
+                    "type" : "_1792",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_texCoord01",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2DArrayShadow",
+            "name" : "shadowMaps",
+            "set" : 0,
+            "binding" : 12
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "normalMap",
+            "set" : 0,
+            "binding" : 1
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "albedoMap",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "specularMap",
+            "set" : 0,
+            "binding" : 2
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "obscuranceMap",
+            "set" : 0,
+            "binding" : 4
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "depthMap",
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "scatteringSpecularBeckmann",
+            "set" : 0,
+            "binding" : 9
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "scatteringLUT",
+            "set" : 0,
+            "binding" : 8
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "curvatureMap",
+            "set" : 0,
+            "binding" : 6
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "diffusedCurvatureMap",
+            "set" : 0,
+            "binding" : 7
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_393",
+            "name" : "shadowTransformBuffer",
+            "block_size" : 340,
+            "set" : 0,
+            "binding" : 2
+        },
+        {
+            "type" : "_1107",
+            "name" : "deferredFrameTransformBuffer",
+            "block_size" : 768,
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "_1113",
+            "name" : "cameraCorrectionBuffer",
+            "block_size" : 256,
+            "set" : 0,
+            "binding" : 18
+        },
+        {
+            "type" : "_1390",
+            "name" : "lightingModelBuffer",
+            "block_size" : 80,
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "_1424",
+            "name" : "keyLightBuffer",
+            "block_size" : 64,
+            "set" : 0,
+            "binding" : 4
+        },
+        {
+            "type" : "_1448",
+            "name" : "lightAmbientBuffer",
+            "block_size" : 224,
+            "set" : 0,
+            "binding" : 6
+        },
+        {
+            "type" : "_1793",
+            "name" : "subsurfaceScatteringParametersBuffer",
+            "block_size" : 48,
+            "set" : 0,
+            "binding" : 13
+        }
+    ]
+}

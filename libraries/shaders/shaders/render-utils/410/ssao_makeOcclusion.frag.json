@@ -1,0 +1,211 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_232" : {
+            "name" : "DeferredFrameTransform",
+            "members" : [
+                {
+                    "name" : "_pixelInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_invPixelInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_depthInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 64
+                },
+                {
+                    "name" : "_invProjection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionMono",
+                    "type" : "mat4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 384
+                },
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 448
+                },
+                {
+                    "name" : "_projectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 512
+                },
+                {
+                    "name" : "_invProjectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 640
+                }
+            ]
+        },
+        "_233" : {
+            "name" : "deferredFrameTransformBuffer",
+            "members" : [
+                {
+                    "name" : "frameTransform",
+                    "type" : "_232",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_361" : {
+            "name" : "AmbientOcclusionParams",
+            "members" : [
+                {
+                    "name" : "_resolutionInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_radiusInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_ditheringInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_sampleInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_falloffInfo",
+                    "type" : "vec4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_sideSizes",
+                    "type" : "vec4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 80
+                }
+            ]
+        },
+        "_362" : {
+            "name" : "ambientOcclusionParamsBuffer",
+            "members" : [
+                {
+                    "name" : "params",
+                    "type" : "_361",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_608" : {
+            "name" : "AmbientOcclusionFrameParams",
+            "members" : [
+                {
+                    "name" : "_angleInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_609" : {
+            "name" : "ambientOcclusionFrameParamsBuffer",
+            "members" : [
+                {
+                    "name" : "frameParams",
+                    "type" : "_608",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outFragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "depthPyramidTex",
+            "set" : 0,
+            "binding" : 1
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "normalTex",
+            "set" : 0,
+            "binding" : 2
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_233",
+            "name" : "deferredFrameTransformBuffer",
+            "block_size" : 768,
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "_362",
+            "name" : "ambientOcclusionParamsBuffer",
+            "block_size" : 112,
+            "set" : 0,
+            "binding" : 2
+        },
+        {
+            "type" : "_609",
+            "name" : "ambientOcclusionFrameParamsBuffer",
+            "block_size" : 16,
+            "set" : 0,
+            "binding" : 5
+        }
+    ]
+}

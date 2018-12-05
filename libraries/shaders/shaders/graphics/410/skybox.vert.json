@@ -1,0 +1,103 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_13" : {
+            "name" : "_TransformCamera",
+            "members" : [
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_projectionViewUntranslated",
+                    "type" : "mat4",
+                    "offset" : 128
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionInverse",
+                    "type" : "mat4",
+                    "offset" : 256
+                },
+                {
+                    "name" : "_viewport",
+                    "type" : "vec4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 336
+                }
+            ]
+        },
+        "_14" : {
+            "name" : "transformCameraBuffer",
+            "members" : [
+                {
+                    "name" : "_camera",
+                    "type" : "_13",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_108" : {
+            "name" : "gl_PerVertex",
+            "members" : [
+                {
+                    "name" : "gl_Position",
+                    "type" : "vec4"
+                },
+                {
+                    "name" : "gl_PointSize",
+                    "type" : "float"
+                },
+                {
+                    "name" : "gl_ClipDistance",
+                    "type" : "float",
+                    "array" : [
+                        1
+                    ]
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "ivec2",
+            "name" : "_drawCallInfo",
+            "location" : 15
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec3",
+            "name" : "_normal",
+            "location" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_14",
+            "name" : "transformCameraBuffer",
+            "block_size" : 352,
+            "set" : 0,
+            "binding" : 15
+        }
+    ]
+}

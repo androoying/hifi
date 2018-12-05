@@ -1,0 +1,203 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_212" : {
+            "name" : "LightingModel",
+            "members" : [
+                {
+                    "name" : "_UnlitEmissiveLightmapBackground",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_ScatteringDiffuseSpecularAlbedo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_AmbientDirectionalPointSpot",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_ShowContourObscuranceWireframe",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_HazeBloomSkinningBlendshape",
+                    "type" : "vec4",
+                    "offset" : 64
+                }
+            ]
+        },
+        "_213" : {
+            "name" : "lightingModelBuffer",
+            "members" : [
+                {
+                    "name" : "lightingModel",
+                    "type" : "_212",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_281" : {
+            "name" : "Material",
+            "members" : [
+                {
+                    "name" : "_emissiveOpacity",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_albedoRoughness",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_metallicScatteringSpare2",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_keySpare3",
+                    "type" : "vec4",
+                    "offset" : 48
+                }
+            ]
+        },
+        "_283" : {
+            "name" : "TexMapArray",
+            "members" : [
+                {
+                    "name" : "_texcoordTransforms0",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_texcoordTransforms1",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_lightmapParams",
+                    "type" : "vec4",
+                    "offset" : 128
+                }
+            ]
+        },
+        "_284" : {
+            "name" : "materialBuffer",
+            "members" : [
+                {
+                    "name" : "_mat",
+                    "type" : "_281",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_texMapArray",
+                    "type" : "_283",
+                    "offset" : 64
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_texCoord01",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_color",
+            "location" : 1
+        },
+        {
+            "type" : "vec3",
+            "name" : "_normalWS",
+            "location" : 3
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor0",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor1",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor2",
+            "location" : 2
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor3",
+            "location" : 3
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "albedoMap",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "roughnessMap",
+            "set" : 0,
+            "binding" : 4
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "metallicMap",
+            "set" : 0,
+            "binding" : 2
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "emissiveMap",
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "occlusionMap",
+            "set" : 0,
+            "binding" : 5
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "scatteringMap",
+            "set" : 0,
+            "binding" : 6
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_213",
+            "name" : "lightingModelBuffer",
+            "block_size" : 80,
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "_284",
+            "name" : "materialBuffer",
+            "block_size" : 208,
+            "set" : 0,
+            "binding" : 1
+        }
+    ]
+}

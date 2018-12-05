@@ -1,0 +1,5 @@
+Package: glm
+Version: 0.9.9.3
+Architecture: x64-osx
+Multi-Arch: same
+Description: OpenGL Mathematics (GLM) https://glm.g-truc.net

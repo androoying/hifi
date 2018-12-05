@@ -1,0 +1,15 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ]
+}

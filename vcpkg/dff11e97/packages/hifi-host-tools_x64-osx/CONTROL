@@ -1,0 +1,6 @@
+Package: hifi-host-tools
+Version: 0
+Depends: hifi-scribe, glslang, spirv-cross, spirv-tools
+Architecture: x64-osx
+Multi-Arch: same
+Description: Host build system compatible tools for building High Fidelity applications

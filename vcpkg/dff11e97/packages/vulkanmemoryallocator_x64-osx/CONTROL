@@ -1,0 +1,5 @@
+Package: vulkanmemoryallocator
+Version: 3a7249f313b047417fbb1d36a3fbe6c3bf1505b5
+Architecture: x64-osx
+Multi-Arch: same
+Description: Vulkan Memory Allocator

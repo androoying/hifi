@@ -1,0 +1,7 @@
+x64-osx/
+x64-osx/include/
+x64-osx/include/vma/
+x64-osx/include/vma/vk_mem_alloc.h
+x64-osx/share/
+x64-osx/share/vulkanmemoryallocator/
+x64-osx/share/vulkanmemoryallocator/copyright

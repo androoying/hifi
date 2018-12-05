@@ -1,0 +1,166 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_328" : {
+            "name" : "LightVolume",
+            "members" : [
+                {
+                    "name" : "positionRadius",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "directionSpotCos",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_329" : {
+            "name" : "LightIrradiance",
+            "members" : [
+                {
+                    "name" : "colorIntensity",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "attenuation",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_330" : {
+            "name" : "Light",
+            "members" : [
+                {
+                    "name" : "volume",
+                    "type" : "_328",
+                    "offset" : 0
+                },
+                {
+                    "name" : "irradiance",
+                    "type" : "_329",
+                    "offset" : 32
+                }
+            ]
+        },
+        "_331" : {
+            "name" : "keyLightBuffer",
+            "members" : [
+                {
+                    "name" : "light",
+                    "type" : "_330",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_366" : {
+            "name" : "ScatteringParameters",
+            "members" : [
+                {
+                    "name" : "normalBendInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "curvatureInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "debugFlags",
+                    "type" : "vec4",
+                    "offset" : 32
+                }
+            ]
+        },
+        "_367" : {
+            "name" : "subsurfaceScatteringParametersBuffer",
+            "members" : [
+                {
+                    "name" : "parameters",
+                    "type" : "_366",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_555" : {
+            "name" : "SSSDebugParams",
+            "members" : [
+                {
+                    "name" : "cursorTexCoordSpare2",
+                    "type" : "vec4",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_556" : {
+            "name" : "sssDebugParamsBuffer",
+            "members" : [
+                {
+                    "name" : "sssDebugParams",
+                    "type" : "_555",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "curvatureMap",
+            "set" : 0,
+            "binding" : 6
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "diffusedCurvatureMap",
+            "set" : 0,
+            "binding" : 7
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_331",
+            "name" : "keyLightBuffer",
+            "block_size" : 64,
+            "set" : 0,
+            "binding" : 4
+        },
+        {
+            "type" : "_367",
+            "name" : "subsurfaceScatteringParametersBuffer",
+            "block_size" : 48,
+            "set" : 0,
+            "binding" : 13
+        },
+        {
+            "type" : "_556",
+            "name" : "sssDebugParamsBuffer",
+            "block_size" : 16,
+            "set" : 0,
+            "binding" : 1
+        }
+    ]
+}

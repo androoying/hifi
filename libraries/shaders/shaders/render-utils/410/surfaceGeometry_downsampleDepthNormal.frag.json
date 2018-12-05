@@ -1,0 +1,41 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outLinearDepth",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "outNormal",
+            "location" : 1
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "linearDepthMap",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "normalMap",
+            "set" : 0,
+            "binding" : 1
+        }
+    ]
+}

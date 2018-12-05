@@ -1,0 +1,119 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_25" : {
+            "name" : "_TransformCamera",
+            "members" : [
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_projectionViewUntranslated",
+                    "type" : "mat4",
+                    "offset" : 128
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionInverse",
+                    "type" : "mat4",
+                    "offset" : 256
+                },
+                {
+                    "name" : "_viewport",
+                    "type" : "vec4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 336
+                }
+            ]
+        },
+        "_29" : {
+            "name" : "transformCameraBuffer",
+            "members" : [
+                {
+                    "name" : "_camera",
+                    "type" : "_25",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 0
+                }
+            ]
+        },
+        "_173" : {
+            "name" : "gl_PerVertex",
+            "members" : [
+                {
+                    "name" : "gl_Position",
+                    "type" : "vec4"
+                },
+                {
+                    "name" : "gl_PointSize",
+                    "type" : "float"
+                },
+                {
+                    "name" : "gl_ClipDistance",
+                    "type" : "float",
+                    "array" : [
+                        1
+                    ]
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "ivec2",
+            "name" : "_drawCallInfo",
+            "location" : 15
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "int",
+            "name" : "_stereoSide",
+            "location" : 8
+        },
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "samplerBuffer",
+            "name" : "transformObjectBuffer",
+            "set" : 0,
+            "binding" : 31
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_29",
+            "name" : "transformCameraBuffer",
+            "block_size" : 704,
+            "set" : 0,
+            "binding" : 15
+        }
+    ]
+}

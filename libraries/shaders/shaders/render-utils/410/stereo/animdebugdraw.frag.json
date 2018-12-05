@@ -1,0 +1,22 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_color",
+            "location" : 1
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor",
+            "location" : 0
+        }
+    ]
+}

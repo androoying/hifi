@@ -1,0 +1,199 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_205" : {
+            "name" : "FadeParameters",
+            "members" : [
+                {
+                    "name" : "_noiseInvSizeAndLevel",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_innerEdgeColor",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_outerEdgeColor",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_edgeWidthInvWidth",
+                    "type" : "vec2",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_baseLevel",
+                    "type" : "float",
+                    "offset" : 56
+                },
+                {
+                    "name" : "_isInverted",
+                    "type" : "int",
+                    "offset" : 60
+                }
+            ]
+        },
+        "_208" : {
+            "name" : "fadeParametersBuffer",
+            "members" : [
+                {
+                    "name" : "fadeParameters",
+                    "type" : "_205",
+                    "array" : [
+                        5
+                    ],
+                    "offset" : 0
+                }
+            ]
+        },
+        "_493" : {
+            "name" : "FadeObjectParams",
+            "members" : [
+                {
+                    "name" : "noiseOffset",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "baseOffset",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "baseInvSize",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "category",
+                    "type" : "int",
+                    "offset" : 48
+                },
+                {
+                    "name" : "threshold",
+                    "type" : "float",
+                    "offset" : 52
+                }
+            ]
+        },
+        "_494" : {
+            "name" : "fadeObjectParametersBuffer",
+            "members" : [
+                {
+                    "name" : "fadeObjectParams",
+                    "type" : "_493",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_551" : {
+            "name" : "PolyLineUniforms",
+            "members" : [
+                {
+                    "name" : "color",
+                    "type" : "vec3",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_552" : {
+            "name" : "polyLineBuffer",
+            "members" : [
+                {
+                    "name" : "polyline",
+                    "type" : "_551",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_worldPosition",
+            "location" : 3
+        },
+        {
+            "type" : "vec2",
+            "name" : "varTexcoord",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "varColor",
+            "location" : 2
+        },
+        {
+            "type" : "vec3",
+            "name" : "interpolatedNormal",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor0",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor1",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor2",
+            "location" : 2
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor3",
+            "location" : 3
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "fadeMaskMap",
+            "set" : 0,
+            "binding" : 10
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "originalTexture",
+            "set" : 0,
+            "binding" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_208",
+            "name" : "fadeParametersBuffer",
+            "block_size" : 320,
+            "set" : 0,
+            "binding" : 8
+        },
+        {
+            "type" : "_494",
+            "name" : "fadeObjectParametersBuffer",
+            "block_size" : 56,
+            "set" : 0,
+            "binding" : 9
+        },
+        {
+            "type" : "_552",
+            "name" : "polyLineBuffer",
+            "block_size" : 12,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

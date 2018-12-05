@@ -1,0 +1,56 @@
+#
+#  CPackProperties.cmake.in
+#  cmake/templates
+#
+#  Copyright 2016 High Fidelity, Inc.
+#  Created by Stephen Birarda on January 11, 2016
+#
+#  Distributed under the Apache License, Version 2.0.
+#  See the accompanying file LICENSE or http://www.apache.org/licenses/LICENSE-2.0.html
+#
+
+set(INTERFACE_DISPLAY_NAME "Interface")
+set(INTERFACE_SHORTCUT_NAME "")
+set(INTERFACE_HF_SHORTCUT_NAME "")
+set(INTERFACE_WIN_EXEC_NAME ".exe")
+set(CONSOLE_DISPLAY_NAME "Console")
+set(CONSOLE_INSTALL_SUBDIR "High Fidelity - dev")
+set(CONSOLE_SHORTCUT_NAME "")
+set(CONSOLE_HF_SHORTCUT_NAME "")
+set(SANDBOX_SHORTCUT_NAME "")
+set(SANDBOX_HF_SHORTCUT_NAME "")
+set(CONSOLE_WIN_EXEC_NAME "Sandbox.app")
+set(PRE_SANDBOX_INTERFACE_SHORTCUT_NAME "")
+set(PRE_SANDBOX_CONSOLE_SHORTCUT_NAME "")
+set(DS_DISPLAY_NAME "Domain Server")
+set(DS_EXEC_NAME "")
+set(AC_DISPLAY_NAME "Assignment Client")
+set(AC_EXEC_NAME "")
+set(HIGH_FIDELITY_PROTOCOL "")
+set(HIGH_FIDELITY_APP_PROTOCOL "")
+set(PRODUCTION_BUILD "0")
+set(PR_BUILD "0")
+set(BUILD_ORGANIZATION "High Fidelity - dev")
+set(POST_INSTALL_OPTIONS_PATH "")
+set(CLIENT_COMPONENT_NAME "client")
+set(SERVER_COMPONENT_NAME "server")
+set(SIGNTOOL_EXECUTABLE "")
+set(UNINSTALLER_NAME "")
+set(REGISTRY_HKLM_INSTALL_ROOT "")
+set(POST_INSTALL_OPTIONS_REG_GROUP "")
+set(CLIENT_DESKTOP_SHORTCUT_REG_KEY "")
+set(CONSOLE_DESKTOP_SHORTCUT_REG_KEY "")
+set(CONSOLE_STARTUP_REG_KEY "")
+set(SERVER_LAUNCH_NOW_REG_KEY "")
+set(CLIENT_LAUNCH_NOW_REG_KEY "")
+set(CUSTOM_INSTALL_REG_KEY "")
+set(GA_TRACKING_ID "")
+set(CLIENT_ID_REG_KEY "")
+set(INSTALLER_HEADER_IMAGE "")
+set(UNINSTALLER_HEADER_IMAGE "")
+set(ADD_REMOVE_ICON_PATH "")
+set(SERVER_COMPONENT_CONDITIONAL "")
+set(CLIENT_COMPONENT_CONDITIONAL "")
+set(INSTALLER_TYPE "full")
+set(APP_USER_MODEL_ID "com.highfidelity.console-dev")
+set(BYPASS_SIGNING "")

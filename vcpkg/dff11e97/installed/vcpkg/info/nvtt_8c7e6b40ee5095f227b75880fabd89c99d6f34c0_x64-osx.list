@@ -1,0 +1,16 @@
+x64-osx/
+x64-osx/debug/
+x64-osx/debug/lib/
+x64-osx/debug/lib/libnvtt.a
+x64-osx/include/
+x64-osx/include/nvtt/
+x64-osx/include/nvtt/nvtt.h
+x64-osx/include/nvtt/nvtt_wrapper.h
+x64-osx/lib/
+x64-osx/lib/libnvtt.a
+x64-osx/share/
+x64-osx/share/doc/
+x64-osx/share/doc/nvtt/
+x64-osx/share/doc/nvtt/README.md
+x64-osx/share/nvtt/
+x64-osx/share/nvtt/copyright

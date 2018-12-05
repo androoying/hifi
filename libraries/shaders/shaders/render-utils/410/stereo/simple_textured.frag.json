@@ -1,0 +1,55 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_texCoord01",
+            "location" : 0
+        },
+        {
+            "type" : "vec3",
+            "name" : "_normalWS",
+            "location" : 3
+        },
+        {
+            "type" : "vec4",
+            "name" : "_color",
+            "location" : 1
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor0",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor1",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor2",
+            "location" : 2
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor3",
+            "location" : 3
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "originalTexture",
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

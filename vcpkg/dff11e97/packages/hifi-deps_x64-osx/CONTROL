@@ -1,0 +1,6 @@
+Package: hifi-deps
+Version: 0
+Depends: bullet3, draco, etc2comp, glm, nvtt, zlib
+Architecture: x64-osx
+Multi-Arch: same
+Description: Collected dependencies for High Fidelity applications

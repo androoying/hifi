@@ -1,0 +1,161 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_122" : {
+            "name" : "DeferredFrameTransform",
+            "members" : [
+                {
+                    "name" : "_pixelInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_invPixelInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_depthInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 64
+                },
+                {
+                    "name" : "_invProjection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionMono",
+                    "type" : "mat4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 384
+                },
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 448
+                },
+                {
+                    "name" : "_projectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 512
+                },
+                {
+                    "name" : "_invProjectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 640
+                }
+            ]
+        },
+        "_123" : {
+            "name" : "deferredFrameTransformBuffer",
+            "members" : [
+                {
+                    "name" : "frameTransform",
+                    "type" : "_122",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_383" : {
+            "name" : "SurfaceGeometryParams",
+            "members" : [
+                {
+                    "name" : "resolutionInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "curvatureInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_384" : {
+            "name" : "surfaceGeometryParamsBuffer",
+            "members" : [
+                {
+                    "name" : "params",
+                    "type" : "_383",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outFragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "linearDepthMap",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "normalMap",
+            "set" : 0,
+            "binding" : 1
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_123",
+            "name" : "deferredFrameTransformBuffer",
+            "block_size" : 768,
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "_384",
+            "name" : "surfaceGeometryParamsBuffer",
+            "block_size" : 32,
+            "set" : 0,
+            "binding" : 1
+        }
+    ]
+}

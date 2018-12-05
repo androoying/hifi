@@ -1,0 +1,261 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_58" : {
+            "name" : "_TransformCamera",
+            "members" : [
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_projectionViewUntranslated",
+                    "type" : "mat4",
+                    "offset" : 128
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionInverse",
+                    "type" : "mat4",
+                    "offset" : 256
+                },
+                {
+                    "name" : "_viewport",
+                    "type" : "vec4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 336
+                }
+            ]
+        },
+        "_62" : {
+            "name" : "transformCameraBuffer",
+            "members" : [
+                {
+                    "name" : "_camera",
+                    "type" : "_58",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 0
+                }
+            ]
+        },
+        "_382" : {
+            "name" : "Radii",
+            "members" : [
+                {
+                    "name" : "start",
+                    "type" : "float",
+                    "offset" : 0
+                },
+                {
+                    "name" : "middle",
+                    "type" : "float",
+                    "offset" : 4
+                },
+                {
+                    "name" : "finish",
+                    "type" : "float",
+                    "offset" : 8
+                },
+                {
+                    "name" : "spread",
+                    "type" : "float",
+                    "offset" : 12
+                }
+            ]
+        },
+        "_383" : {
+            "name" : "Colors",
+            "members" : [
+                {
+                    "name" : "start",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "middle",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "finish",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "spread",
+                    "type" : "vec4",
+                    "offset" : 48
+                }
+            ]
+        },
+        "_384" : {
+            "name" : "Spin",
+            "members" : [
+                {
+                    "name" : "start",
+                    "type" : "float",
+                    "offset" : 0
+                },
+                {
+                    "name" : "middle",
+                    "type" : "float",
+                    "offset" : 4
+                },
+                {
+                    "name" : "finish",
+                    "type" : "float",
+                    "offset" : 8
+                },
+                {
+                    "name" : "spread",
+                    "type" : "float",
+                    "offset" : 12
+                }
+            ]
+        },
+        "_385" : {
+            "name" : "ParticleUniforms",
+            "members" : [
+                {
+                    "name" : "radius",
+                    "type" : "_382",
+                    "offset" : 0
+                },
+                {
+                    "name" : "color",
+                    "type" : "_383",
+                    "offset" : 16
+                },
+                {
+                    "name" : "spin",
+                    "type" : "_384",
+                    "offset" : 80
+                },
+                {
+                    "name" : "lifespan",
+                    "type" : "float",
+                    "offset" : 96
+                },
+                {
+                    "name" : "rotateWithEntity",
+                    "type" : "int",
+                    "offset" : 100
+                },
+                {
+                    "name" : "spare",
+                    "type" : "vec2",
+                    "offset" : 104
+                }
+            ]
+        },
+        "_386" : {
+            "name" : "particleBuffer",
+            "members" : [
+                {
+                    "name" : "particle",
+                    "type" : "_385",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_662" : {
+            "name" : "gl_PerVertex",
+            "members" : [
+                {
+                    "name" : "gl_Position",
+                    "type" : "vec4"
+                },
+                {
+                    "name" : "gl_PointSize",
+                    "type" : "float"
+                },
+                {
+                    "name" : "gl_ClipDistance",
+                    "type" : "float",
+                    "array" : [
+                        1
+                    ]
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "ivec2",
+            "name" : "_drawCallInfo",
+            "location" : 15
+        },
+        {
+            "type" : "vec2",
+            "name" : "inColor",
+            "location" : 2
+        },
+        {
+            "type" : "vec3",
+            "name" : "inPosition",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "int",
+            "name" : "_stereoSide",
+            "location" : 8
+        },
+        {
+            "type" : "vec2",
+            "name" : "varTexcoord",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "varColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "samplerBuffer",
+            "name" : "transformObjectBuffer",
+            "set" : 0,
+            "binding" : 31
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_62",
+            "name" : "transformCameraBuffer",
+            "block_size" : 704,
+            "set" : 0,
+            "binding" : 15
+        },
+        {
+            "type" : "_386",
+            "name" : "particleBuffer",
+            "block_size" : 112,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

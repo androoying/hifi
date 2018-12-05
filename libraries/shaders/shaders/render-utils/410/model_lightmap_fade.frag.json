@@ -1,0 +1,304 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_253" : {
+            "name" : "LightingModel",
+            "members" : [
+                {
+                    "name" : "_UnlitEmissiveLightmapBackground",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_ScatteringDiffuseSpecularAlbedo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_AmbientDirectionalPointSpot",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_ShowContourObscuranceWireframe",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_HazeBloomSkinningBlendshape",
+                    "type" : "vec4",
+                    "offset" : 64
+                }
+            ]
+        },
+        "_254" : {
+            "name" : "lightingModelBuffer",
+            "members" : [
+                {
+                    "name" : "lightingModel",
+                    "type" : "_253",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_306" : {
+            "name" : "Material",
+            "members" : [
+                {
+                    "name" : "_emissiveOpacity",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_albedoRoughness",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_metallicScatteringSpare2",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_keySpare3",
+                    "type" : "vec4",
+                    "offset" : 48
+                }
+            ]
+        },
+        "_307" : {
+            "name" : "TexMapArray",
+            "members" : [
+                {
+                    "name" : "_texcoordTransforms0",
+                    "type" : "mat4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_texcoordTransforms1",
+                    "type" : "mat4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "_lightmapParams",
+                    "type" : "vec4",
+                    "offset" : 128
+                }
+            ]
+        },
+        "_308" : {
+            "name" : "materialBuffer",
+            "members" : [
+                {
+                    "name" : "_mat",
+                    "type" : "_306",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_texMapArray",
+                    "type" : "_307",
+                    "offset" : 64
+                }
+            ]
+        },
+        "_409" : {
+            "name" : "FadeParameters",
+            "members" : [
+                {
+                    "name" : "_noiseInvSizeAndLevel",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_innerEdgeColor",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_outerEdgeColor",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_edgeWidthInvWidth",
+                    "type" : "vec2",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_baseLevel",
+                    "type" : "float",
+                    "offset" : 56
+                },
+                {
+                    "name" : "_isInverted",
+                    "type" : "int",
+                    "offset" : 60
+                }
+            ]
+        },
+        "_412" : {
+            "name" : "fadeParametersBuffer",
+            "members" : [
+                {
+                    "name" : "fadeParameters",
+                    "type" : "_409",
+                    "array" : [
+                        5
+                    ],
+                    "offset" : 0
+                }
+            ]
+        },
+        "_686" : {
+            "name" : "FadeObjectParams",
+            "members" : [
+                {
+                    "name" : "noiseOffset",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "baseOffset",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "baseInvSize",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "category",
+                    "type" : "int",
+                    "offset" : 48
+                },
+                {
+                    "name" : "threshold",
+                    "type" : "float",
+                    "offset" : 52
+                }
+            ]
+        },
+        "_687" : {
+            "name" : "fadeObjectParametersBuffer",
+            "members" : [
+                {
+                    "name" : "fadeObjectParams",
+                    "type" : "_686",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_positionWS",
+            "location" : 2
+        },
+        {
+            "type" : "vec4",
+            "name" : "_texCoord01",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_color",
+            "location" : 1
+        },
+        {
+            "type" : "vec3",
+            "name" : "_normalWS",
+            "location" : 3
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_fragColor0",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor1",
+            "location" : 1
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor2",
+            "location" : 2
+        },
+        {
+            "type" : "vec4",
+            "name" : "_fragColor3",
+            "location" : 3
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "albedoMap",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "roughnessMap",
+            "set" : 0,
+            "binding" : 4
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "metallicMap",
+            "set" : 0,
+            "binding" : 2
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "emissiveMap",
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "fadeMaskMap",
+            "set" : 0,
+            "binding" : 10
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_254",
+            "name" : "lightingModelBuffer",
+            "block_size" : 80,
+            "set" : 0,
+            "binding" : 3
+        },
+        {
+            "type" : "_308",
+            "name" : "materialBuffer",
+            "block_size" : 208,
+            "set" : 0,
+            "binding" : 1
+        },
+        {
+            "type" : "_412",
+            "name" : "fadeParametersBuffer",
+            "block_size" : 320,
+            "set" : 0,
+            "binding" : 8
+        },
+        {
+            "type" : "_687",
+            "name" : "fadeObjectParametersBuffer",
+            "block_size" : 56,
+            "set" : 0,
+            "binding" : 9
+        }
+    ]
+}

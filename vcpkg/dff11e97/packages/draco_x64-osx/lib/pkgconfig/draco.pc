@@ -1,0 +1,13 @@
+# draco pkg-config.
+prefix=/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx
+exec_prefix=/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx/bin
+libdir=/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx/lib
+includedir=/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx/include
+
+Name: Draco
+Description: 3D Compression.
+Version: 1.3.3
+Requires:
+Conflicts:
+Libs: -L/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx/lib -ldraco
+Cflags: -I/Users/andrewying/hifi/vcpkg/dff11e97/packages/draco_x64-osx/include -std=c++11

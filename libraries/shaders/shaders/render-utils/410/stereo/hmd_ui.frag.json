@@ -1,0 +1,61 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_21" : {
+            "name" : "HUDData",
+            "members" : [
+                {
+                    "name" : "alpha",
+                    "type" : "float",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_22" : {
+            "name" : "hudBuffer",
+            "members" : [
+                {
+                    "name" : "hud",
+                    "type" : "_21",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "_texCoord01",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "fragColor0",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "hudTexture",
+            "set" : 0,
+            "binding" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_22",
+            "name" : "hudBuffer",
+            "block_size" : 4,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

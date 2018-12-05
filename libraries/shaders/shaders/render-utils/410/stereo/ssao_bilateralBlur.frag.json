@@ -1,0 +1,161 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_112" : {
+            "name" : "DeferredFrameTransform",
+            "members" : [
+                {
+                    "name" : "_pixelInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_invPixelInfo",
+                    "type" : "vec4",
+                    "offset" : 16
+                },
+                {
+                    "name" : "_depthInfo",
+                    "type" : "vec4",
+                    "offset" : 32
+                },
+                {
+                    "name" : "_stereoInfo",
+                    "type" : "vec4",
+                    "offset" : 48
+                },
+                {
+                    "name" : "_projection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 64
+                },
+                {
+                    "name" : "_invProjection",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 192
+                },
+                {
+                    "name" : "_projectionMono",
+                    "type" : "mat4",
+                    "offset" : 320
+                },
+                {
+                    "name" : "_viewInverse",
+                    "type" : "mat4",
+                    "offset" : 384
+                },
+                {
+                    "name" : "_view",
+                    "type" : "mat4",
+                    "offset" : 448
+                },
+                {
+                    "name" : "_projectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 512
+                },
+                {
+                    "name" : "_invProjectionUnJittered",
+                    "type" : "mat4",
+                    "array" : [
+                        2
+                    ],
+                    "offset" : 640
+                }
+            ]
+        },
+        "_113" : {
+            "name" : "deferredFrameTransformBuffer",
+            "members" : [
+                {
+                    "name" : "frameTransform",
+                    "type" : "_112",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_226" : {
+            "name" : "AmbientOcclusionBlurParams",
+            "members" : [
+                {
+                    "name" : "_blurInfo",
+                    "type" : "vec4",
+                    "offset" : 0
+                },
+                {
+                    "name" : "_blurAxis",
+                    "type" : "vec4",
+                    "offset" : 16
+                }
+            ]
+        },
+        "_227" : {
+            "name" : "blurParamsBuffer",
+            "members" : [
+                {
+                    "name" : "blurParams",
+                    "type" : "_226",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outFragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "depthPyramidTex",
+            "set" : 0,
+            "binding" : 1
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "occlusionMap",
+            "set" : 0,
+            "binding" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_113",
+            "name" : "deferredFrameTransformBuffer",
+            "block_size" : 768,
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "_227",
+            "name" : "blurParamsBuffer",
+            "block_size" : 32,
+            "set" : 0,
+            "binding" : 4
+        }
+    ]
+}

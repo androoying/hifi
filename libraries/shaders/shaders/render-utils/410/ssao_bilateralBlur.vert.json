@@ -1,0 +1,52 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_135" : {
+            "name" : "gl_PerVertex",
+            "members" : [
+                {
+                    "name" : "gl_Position",
+                    "type" : "vec4"
+                },
+                {
+                    "name" : "gl_PointSize",
+                    "type" : "float"
+                },
+                {
+                    "name" : "gl_ClipDistance",
+                    "type" : "float",
+                    "array" : [
+                        1
+                    ]
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "ivec2",
+            "name" : "_drawCallInfo",
+            "location" : 15
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "samplerBuffer",
+            "name" : "transformObjectBuffer",
+            "set" : 0,
+            "binding" : 31
+        }
+    ]
+}

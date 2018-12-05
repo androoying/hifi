@@ -1,0 +1,73 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_35" : {
+            "name" : "Parameters",
+            "members" : [
+                {
+                    "name" : "_intensities",
+                    "type" : "vec3",
+                    "offset" : 0
+                }
+            ]
+        },
+        "_36" : {
+            "name" : "parametersBuffer",
+            "members" : [
+                {
+                    "name" : "parameters",
+                    "type" : "_35",
+                    "offset" : 0
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec2",
+            "name" : "varTexCoord0",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "outFragColor",
+            "location" : 0
+        }
+    ],
+    "textures" : [
+        {
+            "type" : "sampler2D",
+            "name" : "blurMap0",
+            "set" : 0,
+            "binding" : 0
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "blurMap1",
+            "set" : 0,
+            "binding" : 1
+        },
+        {
+            "type" : "sampler2D",
+            "name" : "blurMap2",
+            "set" : 0,
+            "binding" : 2
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_36",
+            "name" : "parametersBuffer",
+            "block_size" : 12,
+            "set" : 0,
+            "binding" : 1
+        }
+    ]
+}

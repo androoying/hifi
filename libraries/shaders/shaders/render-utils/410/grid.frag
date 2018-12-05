@@ -1,0 +1,146 @@
+#version 410 core
+#define GPU_GL410
+#define BITFIELD int
+#if defined(VULKAN)
+  #extension GL_ARB_shading_language_420pack : require
+  #define LAYOUT(X) layout(X)
+  #define LAYOUT_STD140(X) layout(std140, X)
+#else
+  #define LAYOUT(X)
+  #define LAYOUT_STD140(X) layout(std140)
+#endif
+#ifdef VULKAN
+#define gl_InstanceID  gl_InstanceIndex
+#define gl_VertexID  gl_VertexIndex
+#endif
+#define GPU_PIXEL_SHADER
+//PC 410 core
+//  Generated on Wed Dec  5 03:19:02 2018
+//  grid.frag
+//  fragment shader
+//
+//  Created by Zach Pomerantz on 2/16/2016.
+//  Copyright 2016 High Fidelity, Inc.
+//
+//  Distributed under the Apache License, Version 2.0.
+//  See the accompanying file LICENSE or http://www.apache.org/licenses/LICENSE-2.0.html
+//
+
+// // // // Hack comment to absorb the extra '//' scribe prepends
+
+#ifndef GPU_SHADER_CONSTANTS_H
+#define GPU_SHADER_CONSTANTS_H
+
+#define GPU_BUFFER_TRANSFORM_CAMERA 15
+#define GPU_BUFFER_TEXTURE_TABLE0 16
+#define GPU_BUFFER_TEXTURE_TABLE1 17
+#define GPU_BUFFER_CAMERA_CORRECTION 18
+
+#define GPU_TEXTURE_TRANSFORM_OBJECT 31
+
+
+#define GPU_RESOURCE_BUFFER_SLOT0_TEXTURE 35
+#define GPU_RESOURCE_BUFFER_SLOT1_TEXTURE 36
+#define GPU_RESOURCE_BUFFER_SLOT0_STORAGE 0
+#define GPU_RESOURCE_BUFFER_SLOT1_STORAGE 1
+
+// Mip creation
+#define GPU_TEXTURE_MIP_CREATION_INPUT 30
+
+#define GPU_STORAGE_TRANSFORM_OBJECT 7
+
+#define GPU_ATTR_POSITION 0
+#define GPU_ATTR_NORMAL 1
+#define GPU_ATTR_COLOR 2
+#define GPU_ATTR_TEXCOORD0 3
+#define GPU_ATTR_TANGENT 4
+#define GPU_ATTR_SKIN_CLUSTER_INDEX 5
+#define GPU_ATTR_SKIN_CLUSTER_WEIGHT 6
+#define GPU_ATTR_TEXCOORD1 7
+#define GPU_ATTR_TEXCOORD2 8
+#define GPU_ATTR_TEXCOORD3 9
+#define GPU_ATTR_TEXCOORD4 10
+#define GPU_ATTR_STEREO_SIDE 14
+#define GPU_ATTR_DRAW_CALL_INFO 15
+
+// OSX seems to have an issue using 14 as an attribute location for passing from the vertex to the fragment shader
+#define GPU_ATTR_V2F_STEREO_SIDE 8
+
+#define GPU_UNIFORM_EXTRA0 110
+#define GPU_UNIFORM_EXTRA1 111
+#define GPU_UNIFORM_EXTRA2 112
+#define GPU_UNIFORM_EXTRA3 113
+#define GPU_UNIFORM_EXTRA4 114
+#define GPU_UNIFORM_EXTRA5 115
+#define GPU_UNIFORM_EXTRA6 116
+#define GPU_UNIFORM_EXTRA7 117
+#define GPU_UNIFORM_EXTRA8 118
+#define GPU_UNIFORM_EXTRA9 119
+
+// // Hack Comment
+#endif // GPU_SHADER_CONSTANTS_H
+
+// // // Hack Comment
+float paintStripe(float value, float offset, float scale, float edge) {
+    float width = fwidth(value);
+    float normalizedWidth = width * scale;
+
+    float x0 = (value + offset) * scale - normalizedWidth / 2.0;
+    float x1 = x0 + normalizedWidth;
+
+    float balance = 1.0 - edge;
+    float i0 = edge * floor(x0) + max(0.0, fract(x0) - balance);
+    float i1 = edge * floor(x1) + max(0.0, fract(x1) - balance);
+    float strip = (i1 - i0) / normalizedWidth;
+
+    return clamp(strip, 0.0, 1.0);
+}
+
+float paintGrid(vec2 value, vec2 offset, vec2 scale, vec2 edge) {
+    return max(
+        paintStripe(value.x, offset.x, scale.x, edge.x),
+        paintStripe(value.y, offset.y, scale.y, edge.y));
+}
+
+float paintGridMajor(vec2 value, vec2 offset, vec2 scale, vec2 edge) {
+    return paintGrid(value, offset, scale, edge);
+}
+
+float paintGridMajorMinor(vec2 value, vec4 offset, vec4 scale, vec4 edge) {
+    return max(
+        paintGrid(value, offset.xy, scale.xy, edge.xy),
+        paintGrid(value, offset.zw, scale.zw, edge.zw));
+}
+
+struct Grid {
+    vec4 period;
+    vec4 offset;
+    vec4 edge;
+};
+
+LAYOUT(binding=0) uniform gridBuffer {
+  Grid grid; 
+};
+
+Grid getGrid() { return grid; }
+
+layout(location=GPU_ATTR_TEXCOORD0) in vec2 varTexCoord0;
+layout(location=GPU_ATTR_COLOR) in vec4 varColor;
+
+layout(location=0) out vec4 outFragColor;
+
+void main(void) {
+    Grid grid = getGrid();
+
+    float alpha;
+    if (grid.edge.z == 0.0) {
+        alpha = paintGrid(varTexCoord0, grid.offset.xy, grid.period.xy, grid.edge.xy);
+    } else {
+        alpha = paintGridMajorMinor(varTexCoord0, grid.offset, grid.period, grid.edge);
+    }
+    if (alpha == 0.0) {
+        discard;
+    }
+
+    outFragColor = vec4(varColor.xyz, varColor.w * alpha);
+}
