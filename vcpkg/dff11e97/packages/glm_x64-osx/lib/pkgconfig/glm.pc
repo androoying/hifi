@@ -1,7 +1,0 @@
-prefix=/Users/andrewying/hifi/vcpkg/dff11e97/packages/glm_x64-osx
-includedir=${prefix}/include
-
-Name: GLM
-Description: OpenGL Mathematics
-Version: 0.9.9
-Cflags: -I${includedir}

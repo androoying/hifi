@@ -1,5 +1,0 @@
-Package: spirv-tools
-Version: 2018.5-1
-Architecture: x64-osx
-Multi-Arch: same
-Description: API and commands for processing SPIR-V modules

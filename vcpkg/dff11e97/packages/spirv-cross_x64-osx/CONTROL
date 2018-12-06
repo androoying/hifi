@@ -1,5 +1,0 @@
-Package: spirv-cross
-Version: 2018-08-07-1
-Architecture: x64-osx
-Multi-Arch: same
-Description: SPIRV-Cross is a practical tool and library for performing reflection on SPIR-V and disassembling SPIR-V back to high level languages.

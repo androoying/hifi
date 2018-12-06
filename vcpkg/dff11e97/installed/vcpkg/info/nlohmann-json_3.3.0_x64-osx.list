@@ -1,7 +1,0 @@
-x64-osx/
-x64-osx/include/
-x64-osx/include/nlohmann/
-x64-osx/include/nlohmann/json.hpp
-x64-osx/share/
-x64-osx/share/nlohmann-json/
-x64-osx/share/nlohmann-json/copyright

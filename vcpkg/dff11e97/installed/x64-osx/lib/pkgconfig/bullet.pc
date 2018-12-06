@@ -1,6 +1,0 @@
-Name: bullet
-Description: Bullet Continuous Collision Detection and Physics Library
-Requires:
-Version: 2.88
-Libs: -L/Users/andrewying/hifi/vcpkg/dff11e97/packages/bullet3_x64-osx/lib -lBulletSoftBody -lBulletDynamics -lBulletCollision -lLinearMath
-Cflags:  -I/Users/andrewying/hifi/vcpkg/dff11e97/packages/bullet3_x64-osx/include/bullet -I/Users/andrewying/hifi/vcpkg/dff11e97/packages/bullet3_x64-osx/include

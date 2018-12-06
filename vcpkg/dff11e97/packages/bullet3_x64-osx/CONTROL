@@ -1,5 +1,0 @@
-Package: bullet3
-Version: ab8f16961e19a86ee20c6a1d61f662392524cc77
-Architecture: x64-osx
-Multi-Arch: same
-Description: Bullet Physics is a professional collision detection, rigid body, and soft body dynamics library

@@ -6543,7 +6543,11 @@ void Application::updateWindowTitle() const {
         }
     }
 
+<<<<<<< HEAD
     QString title = QString() + (!username.isEmpty() ? username + " @ wondrous" : QString())
+=======
+    QString title = QString() + (!username.isEmpty() ? username + " @ " : QString())
+>>>>>>> parent of 72d5d3bfd4... Verify successful build and assignment #3 completion
         + currentPlaceName + connectionStatus + loginStatus + buildVersion;
 
 #ifndef WIN32

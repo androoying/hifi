@@ -1,5 +1,0 @@
-Package: nlohmann-json
-Version: 3.3.0
-Architecture: x64-osx
-Multi-Arch: same
-Description: JSON for Modern C++

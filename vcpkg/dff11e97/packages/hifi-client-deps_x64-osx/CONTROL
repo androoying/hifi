@@ -1,6 +1,0 @@
-Package: hifi-client-deps
-Version: 0
-Depends: hifi-deps, glslang, nlohmann-json, sdl2, spirv-cross, spirv-tools, vulkanmemoryallocator
-Architecture: x64-osx
-Multi-Arch: same
-Description: Collected dependencies for High Fidelity applications

@@ -1,5 +1,0 @@
-Package: zlib
-Version: 1.2.11-3
-Architecture: x64-osx
-Multi-Arch: same
-Description: A compression library
